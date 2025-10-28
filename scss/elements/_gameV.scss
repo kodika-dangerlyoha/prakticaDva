@@ -1,0 +1,129 @@
+@use '../default/base';
+
+.gameV {
+    @include base.game_banner_size(280px);
+    margin-bottom: 35px;
+    &__banner {
+        display: block;
+        object-fit: cover;
+        height: 100%;
+        position: relative;
+        border-radius: 15px;
+        overflow: hidden;
+        background-size: cover;
+        background-color: rgb(55, 55, 55);
+        transition: 0.15s;
+        animation-timing-function: base.$tf-main;
+        cursor: pointer;
+        box-shadow: 0 0 15px rgba(0, 0, 0, .2);
+        border: 1px solid rgba(255, 255, 255, .15);
+        & img {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+        }
+        &__discount {
+            position: absolute;
+            z-index: 4;
+            bottom: 8px;
+            right: 8px;
+            padding: 5px 8px 5px 8px;
+            border-radius: 7px;
+            cursor: pointer;
+            transition: .15s;
+            opacity: 1;
+            font-family: base.$fnt-all;
+            font-size: 15px;
+            font-weight: 700;
+            @include base.style-percentBlock;
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+        }
+        // &__discount {
+        //     position: absolute;
+        //     bottom: 0px;
+        //     left: 0;
+        //     padding: 4px 4px 0 0;
+        //     border-radius: 0 14px 0 14px;
+        //     background-color: base.$clr-main_body;
+        //     cursor: pointer;
+        //     z-index: 2;
+        //     &__inner {
+        //         padding: 5px 10px 5px 10px;
+        //         border-radius: 0 10px 0 10px;
+        //         background: base.$clr-grad_blue_100;
+        //         font-family: base.$fnt-all;
+        //         font-size: 15px;
+        //         font-weight: 700;
+        //         cursor: pointer;
+        //     }
+        // }
+    }
+    &__info {
+        position: relative;
+        padding-top: 10px;
+        display: flex;
+        justify-content: space-between;
+        transition: 0.15s;
+        &__name {
+            position: relative;
+            z-index: 1;
+            font-family: base.$fnt-all;
+        }
+        &__price {
+            position: relative;
+            z-index: 2;
+            font-family: base.$fnt-all;
+            font-weight: 700;
+            transition: 0.15s;
+        }
+        &__buttons {
+            right: 0;
+            left: 0;
+            top: 10px;
+            position: absolute;
+            z-index: 2;
+            display: flex;
+            justify-content: end;
+            transform: translateY(-10px);
+            opacity: 0;
+            transition: 0.15s;
+            background: linear-gradient(to right, rgba(39, 39, 39, 0.2), rgba(39, 39, 39, 1), rgba(39, 39, 39, 1));
+            &__button {
+                position: relative;
+                height: 35px;
+                width: 35px;
+                margin-left: 5px;
+                border-radius: 7px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                overflow: hidden;
+                transition: 0.15s;
+                & img {
+                    height: 18px;
+                    filter: invert(1);
+                }
+                @include base.style-main_click;
+            }
+        }
+    }
+    &:hover &{
+        &__banner {
+            transform: scale(1.05);
+        }
+        &__info {
+            padding-top: 14px;
+            transform: translateY(8px);
+            &__buttons {
+                transform: translateY(-2px);
+                opacity: 1;
+            }
+            &__price {
+                transform: translateX(-85px);
+                text-shadow: 0 0 10px base.$clr-main_body;
+            }
+        }
+    }
+}

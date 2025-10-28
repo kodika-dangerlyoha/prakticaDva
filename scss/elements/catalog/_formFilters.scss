@@ -1,0 +1,101 @@
+@use '../../default/base';
+
+.formFilters {
+    position: relative;
+    margin-bottom: 50px;
+    z-index: 5;
+    &__row {
+        width: 100%;
+        display: flex;
+        gap: 20px;
+        & > * {
+            width: 100%;
+        }
+        &_sub {
+            margin-top: 20px;
+            opacity: 1;
+            transition: .3s;
+            height: 40px;
+        }
+        &_hidden {
+            opacity: 0;
+            margin-top: 0;
+            height: 0px;
+            transition: .3s;
+            overflow: hidden;
+        }
+    }
+    &__menuButtons {
+        height: 40px;
+        display: flex;
+        gap: 10px;
+        &__allFilters {
+            border-radius: 12px;
+            height: 100%;
+            @include base.style-main_click;
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            width: 100%;
+            & > svg {
+                height: 25px;
+            }
+            & > span {
+                font-size: 14px;
+            }
+            &_active {
+                @include base.style-main_active;
+            }
+        }
+        &__reset {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            width: 70px;
+            transition: .15s;
+            &:hover {
+                color: base.$clr-blue_light;
+            }
+        }
+    }
+    &__sortingBlock {
+        height: 40px;
+        display: flex;
+        &__icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            padding: 10px;
+            cursor: pointer;
+            transition: .2s;
+            &__svg {
+                height: 100%;
+                & rect {
+                    transition: .2s;
+                }
+                &_topToBottom {
+                    & > ._r_top {
+                        width: 19px;
+                    }
+                    & > ._r_bottom {
+                        width: 7px;
+                    }
+                }
+                &_BottomToTop {
+                    & > ._r_top {
+                        width: 7px;
+                    }
+                    & > ._r_bottom {
+                        width: 19px;
+                    }
+                }
+            }
+            &:hover rect{
+                fill: base.$clr-blue_light;
+            }
+        }
+    }
+}
