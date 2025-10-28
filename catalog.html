@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Главная</title>
+	<link rel="stylesheet" href="css\main.min.css">
+</head>
+<body>
+	<header class="header">
+		<div class="header__bg" id="header__bg"></div>
+		<div class="header__left">
+			<a href="index.html" class="header__logo">
+				<img src="img/logos/logo.png" alt="">
+			</a>
+		</div>
+		<div class="header__center">
+			<button type="button" title="кнопка открыть закрыть каталог" class="header__buttonCatalog" onclick="open_catalogNavs()">
+				<svg viewBox="0 -0.5 21 21" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+					<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+						<g id="Dribbble-Light-Preview" transform="translate(-139.000000, -200.000000)" fill="#fff">
+							<g id="icons" transform="translate(56.000000, 160.000000)">
+								<path d="M101.9,57.009 C101.9,57.56 101.38235,58 100.80275,58 L97.65275,58 C97.0742,58 96.65,57.56 96.65,57.009 L96.65,54.009 C96.65,53.458 97.0742,53 97.65275,53 L100.80275,53 C101.38235,53 101.9,53.458 101.9,54.009 L101.9,57.009 Z M100.80275,51 L97.65275,51 C95.9129,51 94.55,52.352 94.55,54.009 L94.55,57.009 C94.55,58.666 95.9129,60 97.65275,60 L100.80275,60 C102.5426,60 104,58.666 104,57.009 L104,54.009 C104,52.352 102.5426,51 100.80275,51 L100.80275,51 Z M90.35,57.009 C90.35,57.56 89.83235,58 89.25275,58 L86.10275,58 C85.5242,58 85.1,57.56 85.1,57.009 L85.1,54.009 C85.1,53.458 85.5242,53 86.10275,53 L89.25275,53 C89.83235,53 90.35,53.458 90.35,54.009 L90.35,57.009 Z M89.25275,51 L86.10275,51 C84.3629,51 83,52.352 83,54.009 L83,57.009 C83,58.666 84.3629,60 86.10275,60 L89.25275,60 C90.9926,60 92.45,58.666 92.45,57.009 L92.45,54.009 C92.45,52.352 90.9926,51 89.25275,51 L89.25275,51 Z M101.9,46.009 C101.9,46.56 101.38235,47 100.80275,47 L97.65275,47 C97.0742,47 96.65,46.56 96.65,46.009 L96.65,43.009 C96.65,42.458 97.0742,42 97.65275,42 L100.80275,42 C101.38235,42 101.9,42.458 101.9,43.009 L101.9,46.009 Z M100.80275,40 L97.65275,40 C95.9129,40 94.55,41.352 94.55,43.009 L94.55,46.009 C94.55,47.666 95.9129,49 97.65275,49 L100.80275,49 C102.5426,49 104,47.666 104,46.009 L104,43.009 C104,41.352 102.5426,40 100.80275,40 L100.80275,40 Z M90.35,46.009 C90.35,46.56 89.83235,47 89.25275,47 L86.10275,47 C85.5242,47 85.1,46.56 85.1,46.009 L85.1,43.009 C85.1,42.458 85.5242,42 86.10275,42 L89.25275,42 C89.83235,42 90.35,42.458 90.35,43.009 L90.35,46.009 Z M89.25275,40 L86.10275,40 C84.3629,40 83,41.352 83,43.009 L83,46.009 C83,47.666 84.3629,49 86.10275,49 L89.25275,49 C90.9926,49 92.45,47.666 92.45,46.009 L92.45,43.009 C92.45,41.352 90.9926,40 89.25275,40 L89.25275,40 Z" id="menu_navigation_grid-[#1528]">
+								</path>
+							</g>
+						</g>
+					</g>
+				</svg>
+			</button>
+			<div class="header__searchBlock">
+				<!-- <div class="header__searchBlock__bg">
+					<div class="header__searchBlock__bg__top"></div>
+					<div class="header__searchBlock__bg__bottom"></div>
+				</div> -->
+				<input type="text" title="Поиск">
+				<button class="header__searchBlock__button" title="Поиск" type="button">
+					<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M15.7955 15.8111L21 21M18 10.5C18 14.6421 14.6421 18 10.5 18C6.35786 18 3 14.6421 3 10.5C3 6.35786 6.35786 3 10.5 3C14.6421 3 18 6.35786 18 10.5Z" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+					</svg>
+				</button>
+			</div>
+		</div>
+		<div class="header__right">
+			<nav class="header__nav">
+				<a  href="profile.html" title="Профиль" type="button" class="header__nav__button">
+					<img src="img/icons/main/user64.png" alt="">
+				</a>
+				<a title="Избранное" href="#" class="header__nav__button">
+					<img src="img/icons/main/like64.png" alt="">
+				</a>
+				<a title="Корзина" href="#" class="header__nav__button">
+					<img src="img/icons/main/basket64.png" alt="">
+				</a>
+				<a title="Уведомления" href="#" class="header__nav__button">
+					<img src="img/icons/main/bell64.png" alt="">
+				</a>
+			</nav>
+		</div>
+		<div class="header__catalog">
+			<div class="inner inner_main">
+				<div class="header__catalog__navs">
+					<div class="header__catalog__navs__genres">
+						<div class="header__catalog__head txt">
+							<div class="header__catalog__head__title">Жанры</div>
+							<div class="header__catalog__head__more">Показать все</div>
+						</div>
+						<div class="header__catalog__navs__genres__list" id="list_genres_HC">
+						</div>
+					</div>
+					<div class="header__catalog__navs__authors">
+						<div class="header__catalog__head txt">
+							<div class="header__catalog__head__title">Издатели и разработчики</div>
+							<div class="header__catalog__head__more">Показать все</div>
+						</div>
+						<div class="header__catalog__navs__authors__list" id="list_authors_HC">
+						</div>
+					</div>
+				</div>
+				<div class="header__catalog__gamelist" id="catalog_game_list">
+					<article class="gameH gameH_headerCatalog">
+						<a href="game.html" class="gameH__banner">
+							<div class="gameH__banner__glass"></div>
+							<div class="gameH__banner__imgBlock"><img src="img/banners/farmsim.png" alt="Call Of Duty: Cold War 2"></div>
+							<div class="gameH__banner__videoBlock">
+								<video src="video/50.MP4" autoplay="" loop="" muted="">
+							</video></div>
+							<div class="gameH__banner__info txt">
+								<div class="gameH__banner__info__left">
+									<div class="gameH__banner__info__point gameH__banner__info__point_more gameH__banner__info__point_preOrder"><span>Предзаказ</span>03.04.2026</div>
+								</div>
+								<div class="gameH__banner__info__right">
+									<div class="gameH__banner__info__point gameH__banner__info__point_more">DLC</div>
+									<div class="gameH__banner__info__point gameH__banner__info__point_discount">10%</div>
+								</div>
+							</div>
+						</a>
+						<div class="gameH__info">
+							<div class="gameH__info__buttons">
+								<div class="gameH__info__buttons__button">
+									<div class="gameH__info__buttons__button__forHover gameH__info__buttons__button__forHover_blue absolute-zero"></div>
+									<img src="img/icons/main/basket64.png" alt="">
+								</div>
+								<div class="gameH__info__buttons__button">
+									<div class="gameH__info__buttons__button__forHover gameH__info__buttons__button__forHover_red absolute-zero"></div>
+									<img src="img/icons/main/like64.png" alt="">
+								</div>
+							</div>
+							<div class="gameH__info__name txt">Call Of Duty: Cold War 2</div>
+							<div class="gameH__info__price txt">4599₽</div>
+						</div>
+					</article>
+					<article class="gameH gameH_headerCatalog">
+						<a href="game.html" class="gameH__banner">
+							<div class="gameH__banner__glass"></div>
+							<div class="gameH__banner__imgBlock"><img src="img/banners/farmsim.png" alt="Call Of Duty: Cold War 2"></div>
+							<div class="gameH__banner__videoBlock">
+								<video src="video/50.MP4" autoplay="" loop="" muted="">
+							</video></div>
+							<div class="gameH__banner__info txt">
+								<div class="gameH__banner__info__left">
+									<div class="gameH__banner__info__point gameH__banner__info__point_more gameH__banner__info__point_preOrder"><span>Предзаказ</span>03.04.2026</div>
+								</div>
+								<div class="gameH__banner__info__right">
+									<div class="gameH__banner__info__point gameH__banner__info__point_more">DLC</div>
+									<div class="gameH__banner__info__point gameH__banner__info__point_discount">10%</div>
+								</div>
+							</div>
+						</a>
+						<div class="gameH__info">
+							<div class="gameH__info__buttons">
+								<div class="gameH__info__buttons__button">
+									<div class="gameH__info__buttons__button__forHover gameH__info__buttons__button__forHover_blue absolute-zero"></div>
+									<img src="img/icons/main/basket64.png" alt="">
+								</div>
+								<div class="gameH__info__buttons__button">
+									<div class="gameH__info__buttons__button__forHover gameH__info__buttons__button__forHover_red absolute-zero"></div>
+									<img src="img/icons/main/like64.png" alt="">
+								</div>
+							</div>
+							<div class="gameH__info__name txt">Call Of Duty: Cold War 2</div>
+							<div class="gameH__info__price txt">4599₽</div>
+						</div>
+					</article>
+					<article class="gameH gameH_headerCatalog">
+						<a href="game.html" class="gameH__banner">
+							<div class="gameH__banner__glass"></div>
+							<div class="gameH__banner__imgBlock"><img src="img/banners/farmsim.png" alt="Call Of Duty: Cold War 2"></div>
+							<div class="gameH__banner__videoBlock">
+								<video src="video/50.MP4" autoplay="" loop="" muted="">
+							</video></div>
+							<div class="gameH__banner__info txt">
+								<div class="gameH__banner__info__left">
+									<div class="gameH__banner__info__point gameH__banner__info__point_more gameH__banner__info__point_preOrder"><span>Предзаказ</span>03.04.2026</div>
+								</div>
+								<div class="gameH__banner__info__right">
+									<div class="gameH__banner__info__point gameH__banner__info__point_more">DLC</div>
+									<div class="gameH__banner__info__point gameH__banner__info__point_discount">10%</div>
+								</div>
+							</div>
+						</a>
+						<div class="gameH__info">
+							<div class="gameH__info__buttons">
+								<div class="gameH__info__buttons__button">
+									<div class="gameH__info__buttons__button__forHover gameH__info__buttons__button__forHover_blue absolute-zero"></div>
+									<img src="img/icons/main/basket64.png" alt="">
+								</div>
+								<div class="gameH__info__buttons__button">
+									<div class="gameH__info__buttons__button__forHover gameH__info__buttons__button__forHover_red absolute-zero"></div>
+									<img src="img/icons/main/like64.png" alt="">
+								</div>
+							</div>
+							<div class="gameH__info__name txt">Call Of Duty: Cold War 2</div>
+							<div class="gameH__info__price txt">4599₽</div>
+						</div>
+					</article>
+					<article class="gameH gameH_headerCatalog">
+						<a href="game.html" class="gameH__banner">
+							<div class="gameH__banner__glass"></div>
+							<div class="gameH__banner__imgBlock"><img src="img/banners/farmsim.png" alt="Call Of Duty: Cold War 2"></div>
+							<div class="gameH__banner__videoBlock">
+								<video src="video/50.MP4" autoplay="" loop="" muted="">
+							</video></div>
+							<div class="gameH__banner__info txt">
+								<div class="gameH__banner__info__left">
+									<div class="gameH__banner__info__point gameH__banner__info__point_more gameH__banner__info__point_preOrder"><span>Предзаказ</span>03.04.2026</div>
+								</div>
+								<div class="gameH__banner__info__right">
+									<div class="gameH__banner__info__point gameH__banner__info__point_more">DLC</div>
+									<div class="gameH__banner__info__point gameH__banner__info__point_discount">10%</div>
+								</div>
+							</div>
+						</a>
+						<div class="gameH__info">
+							<div class="gameH__info__buttons">
+								<div class="gameH__info__buttons__button">
+									<div class="gameH__info__buttons__button__forHover gameH__info__buttons__button__forHover_blue absolute-zero"></div>
+									<img src="img/icons/main/basket64.png" alt="">
+								</div>
+								<div class="gameH__info__buttons__button">
+									<div class="gameH__info__buttons__button__forHover gameH__info__buttons__button__forHover_red absolute-zero"></div>
+									<img src="img/icons/main/like64.png" alt="">
+								</div>
+							</div>
+							<div class="gameH__info__name txt">Call Of Duty: Cold War 2</div>
+							<div class="gameH__info__price txt">4599₽</div>
+						</div>
+					</article>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<div class="blackoutBlock fixed-zero" onclick="open_catalogNavs()"></div>
+	
+	<main id="main">
+		<div class="inner inner_catalog">
+            <form class="formFilters" action="" name="form_filter">
+				<div class="formFilters__row">
+					<div class="formFilters__sortingBlock">
+						<div class="formFilters__sortingBlock__icon" onclick="toggle_direction_sorting()">
+							<svg class="formFilters__sortingBlock__icon__svg formFilters__sortingBlock__icon__svg_topToBottom" width="19" height="15" viewBox="0 0 19 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<rect class="_r_top" width="19" height="3" rx="1.5" fill="white"/>
+								<rect y="6" width="13" height="3" rx="1.5" fill="white"/>
+								<rect class="_r_bottom"  y="12" width="7" height="3" rx="1.5" fill="white"/>
+							</svg>
+						</div>
+						<div class="inputList" id="inputList-sorting">
+							<input class="txt" type="text" name="inp-sorting" title="inp-sorting" value="Жанрыни5тгт" id="inp-sorting">
+							<div class="inputList__list">
+								<div class="inputList__list__header" onclick="toggle_list('sorting')">
+									<div class="inputList__list__header__title txt">Сортировка</div>
+									<!-- <div class="inputList__list__header__values txt"></div> -->
+									<div class="inputList__list__header__bg">
+										<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M9.71069 18.2929C10.1012 18.6834 10.7344 18.6834 11.1249 18.2929L16.0123 13.4006C16.7927 12.6195 16.7924 11.3537 16.0117 10.5729L11.1213 5.68254C10.7308 5.29202 10.0976 5.29202 9.70708 5.68254C9.31655 6.07307 9.31655 6.70623 9.70708 7.09676L13.8927 11.2824C14.2833 11.6729 14.2833 12.3061 13.8927 12.6966L9.71069 16.8787C9.32016 17.2692 9.32016 17.9023 9.71069 18.2929Z" fill="#fff"/>
+										</svg>
+									</div>
+								</div>
+								<div class="inputList__list__body">
+									<div class="inputList__list__body__search">
+										<input class="txt" type="text" name="inp_search_sorting" title="inp-search_sorting" placeholder="Поиск">
+									</div>
+									<div class="inputList__list__body__points txt" id="inputList_points-sorting">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="inputList" id="inputList-genres">
+						<input class="txt" type="text" name="inp-genres" title="inp-genres" value="Жанрыни5тгт" id="inp-genres">
+						<div class="inputList__list">
+							<div class="inputList__list__header" onclick="toggle_list('genres')">
+								<div class="inputList__list__header__title txt">Жанры</div>
+								<div class="inputList__list__header__values txt"></div>
+								<div class="inputList__list__header__bg">
+									<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M9.71069 18.2929C10.1012 18.6834 10.7344 18.6834 11.1249 18.2929L16.0123 13.4006C16.7927 12.6195 16.7924 11.3537 16.0117 10.5729L11.1213 5.68254C10.7308 5.29202 10.0976 5.29202 9.70708 5.68254C9.31655 6.07307 9.31655 6.70623 9.70708 7.09676L13.8927 11.2824C14.2833 11.6729 14.2833 12.3061 13.8927 12.6966L9.71069 16.8787C9.32016 17.2692 9.32016 17.9023 9.71069 18.2929Z" fill="#fff"/>
+									</svg>
+								</div>
+							</div>
+							<div class="inputList__list__body">
+								<div class="inputList__list__body__search">
+									<input class="txt" type="text" name="inp_search_genres" title="inp-search_genres" placeholder="Поиск">
+								</div>
+								<div class="inputList__list__body__points txt" id="inputList_points-genres">
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="inputList" id="inputList-prices">
+						<input class="txt" type="text" name="inp-prices" title="inp-prices" value="Жанрыни5тгт" id="inp-prices">
+						<div class="inputList__list">
+							<div class="inputList__list__header" onclick="toggle_list('prices')">
+								<div class="inputList__list__header__title txt">Цена</div>
+								<div class="inputList__list__header__values txt">0 - 9999 ₽</div>
+								<div class="inputList__list__header__bg">
+									<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M9.71069 18.2929C10.1012 18.6834 10.7344 18.6834 11.1249 18.2929L16.0123 13.4006C16.7927 12.6195 16.7924 11.3537 16.0117 10.5729L11.1213 5.68254C10.7308 5.29202 10.0976 5.29202 9.70708 5.68254C9.31655 6.07307 9.31655 6.70623 9.70708 7.09676L13.8927 11.2824C14.2833 11.6729 14.2833 12.3061 13.8927 12.6966L9.71069 16.8787C9.32016 17.2692 9.32016 17.9023 9.71069 18.2929Z" fill="#fff"/>
+									</svg>
+								</div>
+							</div>
+							<div class="inputList__list__body">
+								<div class="inputList__list__body__numbers">
+									<input class="txt" type="number" name="inp_num_min_price" placeholder="От" value="0">
+									<div class="inputList__list__body__numbers__separator"></div>
+									<input class="txt" type="number" name="inp_num_max_price" placeholder="До" value="9999">
+								</div>
+								<div class="inputList__list__body__points txt" id="inputList_points-prices">
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="inputList" id="inputList-date">
+						<input class="txt" type="text" name="inp-date" title="inp-date" value="Жанрыни5тгт" id="inp-date">
+						<div class="inputList__list">
+							<div class="inputList__list__header" onclick="toggle_list('date')">
+								<div class="inputList__list__header__title txt">Год выпуска</div>
+								<div class="inputList__list__header__values txt">1800 - 2030</div>
+								<div class="inputList__list__header__bg">
+									<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M9.71069 18.2929C10.1012 18.6834 10.7344 18.6834 11.1249 18.2929L16.0123 13.4006C16.7927 12.6195 16.7924 11.3537 16.0117 10.5729L11.1213 5.68254C10.7308 5.29202 10.0976 5.29202 9.70708 5.68254C9.31655 6.07307 9.31655 6.70623 9.70708 7.09676L13.8927 11.2824C14.2833 11.6729 14.2833 12.3061 13.8927 12.6966L9.71069 16.8787C9.32016 17.2692 9.32016 17.9023 9.71069 18.2929Z" fill="#fff"/>
+									</svg>
+								</div>
+							</div>
+							<div class="inputList__list__body">
+								<div class="inputList__list__body__numbers">
+									<input class="txt" type="number" name="inp_num_min_date" placeholder="От" value="1800">
+									<div class="inputList__list__body__numbers__separator"></div>
+									<input class="txt" type="number" name="inp_num_max_date" placeholder="До" value="2030">
+								</div>
+								<button type="button" class="inputList__list__body__button txt" onclick="set_value_date()">Применить</button>
+							</div>
+						</div>
+					</div>
+					<div class="formFilters__menuButtons">
+						<button type="button" class="formFilters__menuButtons__allFilters txt" title="кнопка все фильтры" onclick="toggle_subRow()">
+							<svg viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+								<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+									<g transform="translate(-1200.000000, 0.000000)">
+										<g transform="translate(1200.000000, 0.000000)">
+											<path d="M24,0 L24,24 L0,24 L0,0 L24,0 Z M12.5934901,23.257841 L12.5819402,23.2595131 L12.5108777,23.2950439 L12.4918791,23.2987469 L12.4918791,23.2987469 L12.4767152,23.2950439 L12.4056548,23.2595131 C12.3958229,23.2563662 12.3870493,23.2590235 12.3821421,23.2649074 L12.3780323,23.275831 L12.360941,23.7031097 L12.3658947,23.7234994 L12.3769048,23.7357139 L12.4804777,23.8096931 L12.4953491,23.8136134 L12.4953491,23.8136134 L12.5071152,23.8096931 L12.6106902,23.7357139 L12.6232938,23.7196733 L12.6232938,23.7196733 L12.6266527,23.7031097 L12.609561,23.275831 C12.6075724,23.2657013 12.6010112,23.2592993 12.5934901,23.257841 L12.5934901,23.257841 Z M12.8583906,23.1452862 L12.8445485,23.1473072 L12.6598443,23.2396597 L12.6498822,23.2499052 L12.6498822,23.2499052 L12.6471943,23.2611114 L12.6650943,23.6906389 L12.6699349,23.7034178 L12.6699349,23.7034178 L12.678386,23.7104931 L12.8793402,23.8032389 C12.8914285,23.8068999 12.9022333,23.8029875 12.9078286,23.7952264 L12.9118235,23.7811639 L12.8776777,23.1665331 C12.8752882,23.1545897 12.8674102,23.1470016 12.8583906,23.1452862 L12.8583906,23.1452862 Z M12.1430473,23.1473072 C12.1332178,23.1423925 12.1221763,23.1452606 12.1156365,23.1525954 L12.1099173,23.1665331 L12.0757714,23.7811639 C12.0751323,23.7926639 12.0828099,23.8018602 12.0926481,23.8045676 L12.108256,23.8032389 L12.3092106,23.7104931 L12.3186497,23.7024347 L12.3186497,23.7024347 L12.3225043,23.6906389 L12.340401,23.2611114 L12.337245,23.2485176 L12.337245,23.2485176 L12.3277531,23.2396597 L12.1430473,23.1473072 Z" fill-rule="nonzero">
+											</path>
+											<path d="M18,4 C18,3.44772 17.5523,3 17,3 C16.4477,3 16,3.44772 16,4 L16,5 L4,5 C3.44772,5 3,5.44772 3,6 C3,6.55228 3.44772,7 4,7 L16,7 L16,8 C16,8.55228 16.4477,9 17,9 C17.5523,9 18,8.55228 18,8 L18,7 L20,7 C20.5523,7 21,6.55228 21,6 C21,5.44772 20.5523,5 20,5 L18,5 L18,4 Z M4,11 C3.44772,11 3,11.4477 3,12 C3,12.5523 3.44772,13 4,13 L6,13 L6,14 C6,14.5523 6.44772,15 7,15 C7.55228,15 8,14.5523 8,14 L8,13 L20,13 C20.5523,13 21,12.5523 21,12 C21,11.4477 20.5523,11 20,11 L8,11 L8,10 C8,9.44772 7.55228,9 7,9 C6.44772,9 6,9.44772 6,10 L6,11 L4,11 Z M3,18 C3,17.4477 3.44772,17 4,17 L16,17 L16,16 C16,15.4477 16.4477,15 17,15 C17.5523,15 18,15.4477 18,16 L18,17 L20,17 C20.5523,17 21,17.4477 21,18 C21,18.5523 20.5523,19 20,19 L18,19 L18,20 C18,20.5523 17.5523,21 17,21 C16.4477,21 16,20.5523 16,20 L16,19 L4,19 C3.44772,19 3,18.5523 3,18 Z" fill="#fff">
+											</path>
+										</g>
+									</g>
+								</g>
+							</svg>
+							<span>Все фильтры</span>
+						</button>
+						<button type="button" class="formFilters__menuButtons__reset txt" title="кнопка сбросить" onclick="reset_all_filters()">Сбросить</button>
+					</div>
+				</div>
+				<div class="formFilters__row formFilters__row_sub formFilters__row_hidden">
+					<div class="inputList" id="inputList-theme">
+						<input class="txt" type="text" name="inp-theme" title="inp-theme" value="Teмы" id="inp-theme">
+						<div class="inputList__list">
+							<div class="inputList__list__header" onclick="toggle_list('theme')">
+								<div class="inputList__list__header__title txt">Темы</div>
+								<div class="inputList__list__header__values txt"></div>
+								<div class="inputList__list__header__bg">
+									<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M9.71069 18.2929C10.1012 18.6834 10.7344 18.6834 11.1249 18.2929L16.0123 13.4006C16.7927 12.6195 16.7924 11.3537 16.0117 10.5729L11.1213 5.68254C10.7308 5.29202 10.0976 5.29202 9.70708 5.68254C9.31655 6.07307 9.31655 6.70623 9.70708 7.09676L13.8927 11.2824C14.2833 11.6729 14.2833 12.3061 13.8927 12.6966L9.71069 16.8787C9.32016 17.2692 9.32016 17.9023 9.71069 18.2929Z" fill="#fff"/>
+									</svg>
+								</div>
+							</div>
+							<div class="inputList__list__body">
+								<div class="inputList__list__body__search">
+									<input class="txt" type="text" name="inp_search_theme" title="inp-search_theme" placeholder="Поиск">
+								</div>
+								<div class="inputList__list__body__points txt" id="inputList_points-theme">
+									<div class="inputList__list__body__points__point" onclick="change_value_list('', '')">По умолчанию</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="inputList" id="inputList-developers">
+						<input class="txt" type="text" name="inp-developers" title="inp-developers" value="RU (Россия)" id="inp-developers">
+						<div class="inputList__list">
+							<div class="inputList__list__header" onclick="toggle_list('developers')">
+								<div class="inputList__list__header__title txt">Разработчики</div>
+								<div class="inputList__list__header__values txt"></div>
+								<div class="inputList__list__header__bg">
+									<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M9.71069 18.2929C10.1012 18.6834 10.7344 18.6834 11.1249 18.2929L16.0123 13.4006C16.7927 12.6195 16.7924 11.3537 16.0117 10.5729L11.1213 5.68254C10.7308 5.29202 10.0976 5.29202 9.70708 5.68254C9.31655 6.07307 9.31655 6.70623 9.70708 7.09676L13.8927 11.2824C14.2833 11.6729 14.2833 12.3061 13.8927 12.6966L9.71069 16.8787C9.32016 17.2692 9.32016 17.9023 9.71069 18.2929Z" fill="#fff"/>
+									</svg>
+								</div>
+							</div>
+							<div class="inputList__list__body">
+								<div class="inputList__list__body__search">
+									<input class="txt" type="text" name="inp_search_developers" title="inp-search_developers" placeholder="Поиск">
+								</div>
+								<div class="inputList__list__body__points txt" id="inputList_points-developers">
+									<div class="inputList__list__body__points__point" onclick="change_value_list('', '')">По умолчанию</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="inputList" id="inputList-publisher">
+						<input class="txt" type="text" name="inp-publisher" title="inp-publisher" value="RU (Россия)" id="inp-publisher">
+						<div class="inputList__list">
+							<div class="inputList__list__header" onclick="toggle_list('publisher')">
+								<div class="inputList__list__header__title txt">Издатели</div>
+								<div class="inputList__list__header__values txt"></div>
+								<div class="inputList__list__header__bg">
+									<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M9.71069 18.2929C10.1012 18.6834 10.7344 18.6834 11.1249 18.2929L16.0123 13.4006C16.7927 12.6195 16.7924 11.3537 16.0117 10.5729L11.1213 5.68254C10.7308 5.29202 10.0976 5.29202 9.70708 5.68254C9.31655 6.07307 9.31655 6.70623 9.70708 7.09676L13.8927 11.2824C14.2833 11.6729 14.2833 12.3061 13.8927 12.6966L9.71069 16.8787C9.32016 17.2692 9.32016 17.9023 9.71069 18.2929Z" fill="#fff"/>
+									</svg>
+								</div>
+							</div>
+							<div class="inputList__list__body">
+								<div class="inputList__list__body__search">
+									<input class="txt" type="text" name="inp_search_publisher" title="inp-search_publisher" placeholder="Поиск">
+								</div>
+								<div class="inputList__list__body__points txt" id="inputList_points-publisher">
+									<div class="inputList__list__body__points__point" onclick="change_value_list('', '')">По умолчанию</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="inputList" id="inputList-gameMethods">
+						<input class="txt" type="text" name="inp-gameMethods" title="inp-gameMethods" value="RU (Россия)" id="inp-gameMethods">
+						<div class="inputList__list">
+							<div class="inputList__list__header" onclick="toggle_list('gameMethods')">
+								<div class="inputList__list__header__title txt">Способы игры</div>
+								<div class="inputList__list__header__values txt"></div>
+								<div class="inputList__list__header__bg">
+									<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M9.71069 18.2929C10.1012 18.6834 10.7344 18.6834 11.1249 18.2929L16.0123 13.4006C16.7927 12.6195 16.7924 11.3537 16.0117 10.5729L11.1213 5.68254C10.7308 5.29202 10.0976 5.29202 9.70708 5.68254C9.31655 6.07307 9.31655 6.70623 9.70708 7.09676L13.8927 11.2824C14.2833 11.6729 14.2833 12.3061 13.8927 12.6966L9.71069 16.8787C9.32016 17.2692 9.32016 17.9023 9.71069 18.2929Z" fill="#fff"/>
+									</svg>
+								</div>
+							</div>
+							<div class="inputList__list__body">
+								<div class="inputList__list__body__search">
+									<input class="txt" type="text" name="inp_search_gameMethods" title="inp-search_gameMethods" placeholder="Поиск">
+								</div>
+								<div class="inputList__list__body__points txt" id="inputList_points-gameMethods">
+									<div class="inputList__list__body__points__point" onclick="change_value_list('', '')">По умолчанию</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="inputList" id="inputList-gameSeries">
+						<input class="txt" type="text" name="inp-gameSeries" title="inp-gameSeries" value="RU (Россия)" id="inp-gameSeries">
+						<div class="inputList__list">
+							<div class="inputList__list__header" onclick="toggle_list('gameSeries')">
+								<div class="inputList__list__header__title txt">Серии игр</div>
+								<div class="inputList__list__header__values txt"></div>
+								<div class="inputList__list__header__bg">
+									<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M9.71069 18.2929C10.1012 18.6834 10.7344 18.6834 11.1249 18.2929L16.0123 13.4006C16.7927 12.6195 16.7924 11.3537 16.0117 10.5729L11.1213 5.68254C10.7308 5.29202 10.0976 5.29202 9.70708 5.68254C9.31655 6.07307 9.31655 6.70623 9.70708 7.09676L13.8927 11.2824C14.2833 11.6729 14.2833 12.3061 13.8927 12.6966L9.71069 16.8787C9.32016 17.2692 9.32016 17.9023 9.71069 18.2929Z" fill="#fff"/>
+									</svg>
+								</div>
+							</div>
+							<div class="inputList__list__body">
+								<div class="inputList__list__body__search">
+									<input class="txt" type="text" name="inp_search_gameSeries" title="inp-search_gameSeries" placeholder="Поиск">
+								</div>
+								<div class="inputList__list__body__points txt" id="inputList_points-gameSeries">
+									<div class="inputList__list__body__points__point" onclick="change_value_list('', '')">По умолчанию</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+            </form>
+			<section class="games">
+				<div class="games__grid" id="offers_grid_new">
+
+					<article class="gameH">
+					<a href="game.html" class="gameH__banner">
+						<div class="gameH__banner__glass"></div>
+						<div class="gameH__banner__imgBlock"><img src="img/banners/farmsim.png" alt="Call Of Duty: Cold War 2"></div>
+						<div class="gameH__banner__videoBlock">
+							<video src="video/50.MP4" autoplay="" loop="" muted="">
+						</video></div>
+						<div class="gameH__banner__info txt">
+							<div class="gameH__banner__info__left">
+								<div class="gameH__banner__info__point gameH__banner__info__point_more gameH__banner__info__point_preOrder"><span>Предзаказ</span>03.04.2026</div>
+							</div>
+							<div class="gameH__banner__info__right">
+								
+								<div class="gameH__banner__info__point gameH__banner__info__point_discount">10%</div>
+							</div>
+						</div>
+					</a>
+					<div class="gameH__info">
+						<div class="gameH__info__buttons">
+							<div class="gameH__info__buttons__button">
+								<div class="gameH__info__buttons__button__forHover gameH__info__buttons__button__forHover_blue absolute-zero"></div>
+								<img src="img/icons/main/basket64.png" alt="">
+							</div>
+							<div class="gameH__info__buttons__button">
+								<div class="gameH__info__buttons__button__forHover gameH__info__buttons__button__forHover_red absolute-zero"></div>
+								<img src="img/icons/main/like64.png" alt="">
+							</div>
+						</div>
+						<div class="gameH__info__name txt">Call Of Duty: Cold War 2</div>
+						<div class="gameH__info__price txt">4599₽</div>
+					</div>
+				</article><article class="gameH">
+					<a href="game.html" class="gameH__banner">
+						<div class="gameH__banner__glass"></div>
+						<div class="gameH__banner__imgBlock"><img src="img/banners/4.jpg" alt="Ghosts"></div>
+						<div class="gameH__banner__videoBlock">
+							<video src="video/2.MP4" autoplay="" loop="" muted="">
+						</video></div>
+						<div class="gameH__banner__info txt">
+							<div class="gameH__banner__info__left">
+								<div class="gameH__banner__info__point gameH__banner__info__point_more gameH__banner__info__point_preOrder"><span>Предзаказ</span>03.04.2026</div>
+							</div>
+							<div class="gameH__banner__info__right">
+								
+								<div class="gameH__banner__info__point gameH__banner__info__point_discount">22%</div>
+							</div>
+						</div>
+					</a>
+					<div class="gameH__info">
+						<div class="gameH__info__buttons">
+							<div class="gameH__info__buttons__button">
+								<div class="gameH__info__buttons__button__forHover gameH__info__buttons__button__forHover_blue absolute-zero"></div>
+								<img src="img/icons/main/basket64.png" alt="">
+							</div>
+							<div class="gameH__info__buttons__button">
+								<div class="gameH__info__buttons__button__forHover gameH__info__buttons__button__forHover_red absolute-zero"></div>
+								<img src="img/icons/main/like64.png" alt="">
+							</div>
+						</div>
+						<div class="gameH__info__name txt">Ghosts</div>
+						<div class="gameH__info__price txt">1255₽</div>
+					</div>
+				</article><article class="gameH">
+					<a href="" class="gameH__banner">
+						<div class="gameH__banner__glass"></div>
+						<div class="gameH__banner__imgBlock"><img src="img/banners/5.jpg" alt="Drill Aviasion"></div>
+						<div class="gameH__banner__videoBlock">
+							<video src="video/4.MP4" autoplay="" loop="" muted="">
+						</video></div>
+						<div class="gameH__banner__info txt">
+							<div class="gameH__banner__info__left">
+								
+							</div>
+							<div class="gameH__banner__info__right">
+								<div class="gameH__banner__info__point gameH__banner__info__point_more">DLC</div>
+								<div class="gameH__banner__info__point gameH__banner__info__point_discount">8%</div>
+							</div>
+						</div>
+					</a>
+					<div class="gameH__info">
+						<div class="gameH__info__buttons">
+							<div class="gameH__info__buttons__button">
+								<div class="gameH__info__buttons__button__forHover gameH__info__buttons__button__forHover_blue absolute-zero"></div>
+								<img src="img/icons/main/basket64.png" alt="">
+							</div>
+							<div class="gameH__info__buttons__button">
+								<div class="gameH__info__buttons__button__forHover gameH__info__buttons__button__forHover_red absolute-zero"></div>
+								<img src="img/icons/main/like64.png" alt="">
+							</div>
+						</div>
+						<div class="gameH__info__name txt">Drill Aviasion</div>
+						<div class="gameH__info__price txt">3678₽</div>
+					</div>
+				</article><article class="gameH">
+					<a href="" class="gameH__banner">
+						<div class="gameH__banner__glass"></div>
+						<div class="gameH__banner__imgBlock"><img src="img/banners/9.jpg" alt="Call Of Duty: Cold War 2"></div>
+						<div class="gameH__banner__videoBlock">
+							<video src="video/IMG_6148.MP4" autoplay="" loop="" muted="">
+						</video></div>
+						<div class="gameH__banner__info txt">
+							<div class="gameH__banner__info__left">
+								
+							</div>
+							<div class="gameH__banner__info__right">
+								<div class="gameH__banner__info__point gameH__banner__info__point_more">DLC</div>
+								<div class="gameH__banner__info__point gameH__banner__info__point_discount">4%</div>
+							</div>
+						</div>
+					</a>
+					<div class="gameH__info">
+						<div class="gameH__info__buttons">
+							<div class="gameH__info__buttons__button">
+								<div class="gameH__info__buttons__button__forHover gameH__info__buttons__button__forHover_blue absolute-zero"></div>
+								<img src="img/icons/main/basket64.png" alt="">
+							</div>
+							<div class="gameH__info__buttons__button">
+								<div class="gameH__info__buttons__button__forHover gameH__info__buttons__button__forHover_red absolute-zero"></div>
+								<img src="img/icons/main/like64.png" alt="">
+							</div>
+						</div>
+						<div class="gameH__info__name txt">Call Of Duty: Cold War 2</div>
+						<div class="gameH__info__price txt">6700₽</div>
+					</div>
+				</article><article class="gameH">
+					<a href="" class="gameH__banner">
+						<div class="gameH__banner__glass"></div>
+						<div class="gameH__banner__imgBlock"><img src="img/banners/11.jpg" alt="On The Run 2"></div>
+						<div class="gameH__banner__videoBlock">
+							<video src="video/IMG_6148.MP4" autoplay="" loop="" muted="">
+						</video></div>
+						<div class="gameH__banner__info txt">
+							<div class="gameH__banner__info__left">
+								
+							</div>
+							<div class="gameH__banner__info__right">
+								
+								<div class="gameH__banner__info__point gameH__banner__info__point_discount">23%</div>
+							</div>
+						</div>
+					</a>
+					<div class="gameH__info">
+						<div class="gameH__info__buttons">
+							<div class="gameH__info__buttons__button">
+								<div class="gameH__info__buttons__button__forHover gameH__info__buttons__button__forHover_blue absolute-zero"></div>
+								<img src="img/icons/main/basket64.png" alt="">
+							</div>
+							<div class="gameH__info__buttons__button">
+								<div class="gameH__info__buttons__button__forHover gameH__info__buttons__button__forHover_red absolute-zero"></div>
+								<img src="img/icons/main/like64.png" alt="">
+							</div>
+						</div>
+						<div class="gameH__info__name txt">On The Run 2</div>
+						<div class="gameH__info__price txt">2344₽</div>
+					</div>
+				</article><article class="gameH">
+					<a href="game.html" class="gameH__banner">
+						<div class="gameH__banner__glass"></div>
+						<div class="gameH__banner__imgBlock"><img src="img/banners/4.jpg" alt="Ghosts"></div>
+						<div class="gameH__banner__videoBlock">
+							<video src="video/2.MP4" autoplay="" loop="" muted="">
+						</video></div>
+						<div class="gameH__banner__info txt">
+							<div class="gameH__banner__info__left">
+								
+							</div>
+							<div class="gameH__banner__info__right">
+								<div class="gameH__banner__info__point gameH__banner__info__point_more">DLC</div>
+								<div class="gameH__banner__info__point gameH__banner__info__point_discount">22%</div>
+							</div>
+						</div>
+					</a>
+					<div class="gameH__info">
+						<div class="gameH__info__buttons">
+							<div class="gameH__info__buttons__button">
+								<div class="gameH__info__buttons__button__forHover gameH__info__buttons__button__forHover_blue absolute-zero"></div>
+								<img src="img/icons/main/basket64.png" alt="">
+							</div>
+							<div class="gameH__info__buttons__button">
+								<div class="gameH__info__buttons__button__forHover gameH__info__buttons__button__forHover_red absolute-zero"></div>
+								<img src="img/icons/main/like64.png" alt="">
+							</div>
+						</div>
+						<div class="gameH__info__name txt">Ghosts</div>
+						<div class="gameH__info__price txt">1255₽</div>
+					</div>
+				</article><article class="gameH">
+					<a href="" class="gameH__banner">
+						<div class="gameH__banner__glass"></div>
+						<div class="gameH__banner__imgBlock"><img src="img/banners/5.jpg" alt="Drill Aviasion"></div>
+						<div class="gameH__banner__videoBlock">
+							<video src="video/4.MP4" autoplay="" loop="" muted="">
+						</video></div>
+						<div class="gameH__banner__info txt">
+							<div class="gameH__banner__info__left">
+								
+							</div>
+							<div class="gameH__banner__info__right">
+								<div class="gameH__banner__info__point gameH__banner__info__point_more">DLC</div>
+								<div class="gameH__banner__info__point gameH__banner__info__point_discount">8%</div>
+							</div>
+						</div>
+					</a>
+					<div class="gameH__info">
+						<div class="gameH__info__buttons">
+							<div class="gameH__info__buttons__button">
+								<div class="gameH__info__buttons__button__forHover gameH__info__buttons__button__forHover_blue absolute-zero"></div>
+								<img src="img/icons/main/basket64.png" alt="">
+							</div>
+							<div class="gameH__info__buttons__button">
+								<div class="gameH__info__buttons__button__forHover gameH__info__buttons__button__forHover_red absolute-zero"></div>
+								<img src="img/icons/main/like64.png" alt="">
+							</div>
+						</div>
+						<div class="gameH__info__name txt">Drill Aviasion</div>
+						<div class="gameH__info__price txt">3678₽</div>
+					</div>
+				</article><article class="gameH">
+					<a href="" class="gameH__banner">
+						<div class="gameH__banner__glass"></div>
+						<div class="gameH__banner__imgBlock"><img src="img/banners/11.jpg" alt="On The Run 2"></div>
+						<div class="gameH__banner__videoBlock">
+							<video src="video/IMG_6148.MP4" autoplay="" loop="" muted="">
+						</video></div>
+						<div class="gameH__banner__info txt">
+							<div class="gameH__banner__info__left">
+								
+							</div>
+							<div class="gameH__banner__info__right">
+								
+								<div class="gameH__banner__info__point gameH__banner__info__point_discount">23%</div>
+							</div>
+						</div>
+					</a>
+					<div class="gameH__info">
+						<div class="gameH__info__buttons">
+							<div class="gameH__info__buttons__button">
+								<div class="gameH__info__buttons__button__forHover gameH__info__buttons__button__forHover_blue absolute-zero"></div>
+								<img src="img/icons/main/basket64.png" alt="">
+							</div>
+							<div class="gameH__info__buttons__button">
+								<div class="gameH__info__buttons__button__forHover gameH__info__buttons__button__forHover_red absolute-zero"></div>
+								<img src="img/icons/main/like64.png" alt="">
+							</div>
+						</div>
+						<div class="gameH__info__name txt">On The Run 2</div>
+						<div class="gameH__info__price txt">2344₽</div>
+					</div>
+				</article>
+			</div>
+			</section>
+		</div>
+	</main>
+	
+	<footer class="footer">
+        <div class="inner inner_footer inner_oneSec">
+            <div class="footer__head">
+                <div class="footer__head__left">
+                    <div class="footer__head__logo">
+                        <img src="img/logos/logo.png" alt="">
+                    </div>
+                    <nav class="footer__head__nav">
+                        <a class="txt" href="">Частые вопросы</a>
+                        <a class="txt" href="">Политика обработки персональных данных</a>
+                        <a class="txt" href="">Помощь</a>
+                    </nav>
+                </div>
+                <button class="txt flex-center" type="button">Как купить игру?</button>
+            </div>
+            <div class="footer__separator"></div>
+            <div class="footer__body">
+                <div class="footer__body__links">
+                    <div class="footer__body__links__contacts">
+                        <div class="footer__body__links__title">
+                            <h4 class="txt">Контакты</h4>
+                        </div>
+                        <div class="footer__body__links__container">
+                            <a href="" class="txt">
+                                <img src="img/icons/social/chat.svg" alt="">
+                                <span>Онлайн чат</span>
+                            </a>
+                            <a href="" class="txt">
+                                <img src="img/icons/social/mail.svg" alt="">
+                                <span>bogatstvo@mail.ru</span>
+                            </a>
+                            <a href="" class="txt">
+                                <img src="img/icons/social/vk.png" alt="">
+                                <span>Вконтакте</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="footer__body__links__social">
+                        <div class="footer__body__links__title">
+                            <h4 class="txt">Социальные сети</h4>
+                        </div>
+                        <div class="footer__body__links__container">
+                            <a href="" title="tg">
+                                <img src="img/icons/social/tg.svg" alt="">
+                            </a>
+                            <a href="" title="tg">
+                                <img src="img/icons/social/vk.png" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer__separator"></div>
+                <div class="footer__body__info">
+                    <div class="footer__body__info__copyright txt">
+                        © 2025 Все права защищены. Фирма ООО «Бнал»
+                        <br>Ставки на спорт в букмекерской компании «Чунгачхук»
+                    </div>
+                    <div class="footer__body__info__banks">
+                        <img src="img/icons/banks/all.svg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+	<script type="text/javascript" src="scripts/lists.js"></script>
+	<script type="text/javascript" src="elements/elements.js"></script>
+	<script type="text/javascript" src="scripts/makeContentFunctions.js"></script>
+	<!-- <script type="text/javascript" src="scripts/carousel.js"></script> -->
+	<script type="text/javascript" src="scripts/script.js"></script>
+	<script type="text/javascript" src="scripts/header_bg.js"></script>
+	<!-- <script type="text/javascript" src="scripts/script_index.js"></script> -->
+	<script type="text/javascript" src="scripts/header_catalog.js"></script>
+	<script type="text/javascript" src="scripts/input_list.js"></script>
+	<script type="text/javascript" src="scripts/catalog.js"></script>
+</body>
+</html>
